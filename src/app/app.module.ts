@@ -6,12 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MutualfundsComponent } from './mutualfunds/mutualfunds.component';
 import { StocksComponent } from './stocks.component';
-
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
     MutualfundsComponent,
-    StocksComponent
+    StocksComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
