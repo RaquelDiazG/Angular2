@@ -10,4 +10,5 @@ import {StocksComponent} from "./stocks.component";
 
 export class AppComponent {
   title = 'Angular 2!';
+  today =new Date();
 }
