@@ -1,13 +1,17 @@
 
 {{today | date:"dd/MM/yyyy hh:mm a"}}
 
-<h1>
+<h1 myHighlight>
   {{title}}
 </h1>
 
-<stocks>
+<!--<stocks>
 </stocks>
 
 <p>This has no highlight</p>
 
-<p myHighlight>This has highlight</p>
+<p myHighlight>This has highlight</p>-->
+
+<a routerLink="/stocks">STOCKS</a>
+
+<router-outlet></router-outlet>
