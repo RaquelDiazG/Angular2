@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MutualfundsComponent } from './mutualfunds/mutualfunds.component';
 import { StocksComponent } from './stocks.component';
 import { HighlightDirective } from './highlight.directive';
+import { StockService } from './stock.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { HighlightDirective } from './highlight.directive';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [StockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
