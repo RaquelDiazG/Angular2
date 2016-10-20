@@ -1,17 +1,39 @@
 
+<!--<ngb-alert [dismissible]="false">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</ngb-alert>
+
 {{today | date:"dd/MM/yyyy hh:mm a"}}
 
 <h1 myHighlight>
   {{title}}
 </h1>
 
-<!--<stocks>
+<stocks>
 </stocks>
 
 <p>This has no highlight</p>
 
 <p myHighlight>This has highlight</p>-->
 
-<a routerLink="/stocks">STOCKS</a>
+<div class="container-fluid">
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Angular Finance</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/stocks">Stocks</a>
+    </li>
+  </ul>
+  <form class="form-inline pull-xs-right">
+    <input class="form-control" type="text" placeholder="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</nav>
+
 
 <router-outlet></router-outlet>
+
+</div>

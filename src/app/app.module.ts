@@ -14,6 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {CurrencyService} from './currency.service';
 import { BondsDirective } from './bonds.directive';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { BondsDirective } from './bonds.directive';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    NgbModule
   ],
   providers: [StockService,CurrencyService],
   bootstrap: [AppComponent]
