@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {StockService} from '../stock.service';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,9 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  stocks : string[];
+  selectedStock:any;
+  updateEnabled=false;
 
-  ngOnInit() {
+ ngOnInit() {
+    this.getAllStocks();
   }
 
+  constructor(private stockService: StockService) { 
+
+  }
+
+  getAllStocks(){
+    this.stockService.getStocksAPI()
+    .subscribe(
+      data=>this.stocks = data,
+      error =>console.log('Server Error')
+    );
+  }
+
+  createStock(newStockCode:string,newName:string){
+    this.stockService.createStock(newStockCode,newName).subscribe();
+    location.reload();
+  }
+
+  updateStock(newStockCode:string,newName:string){
+    this.stockService.updateStock(this.selectedStock.id,newStockCode,newName).subscribe();
+    location.reload();
+  }
+
+  deleteStock(stockId:string){
+    this.stockService.deleteStock(stockId).subscribe();
+    location.reload();
+  }
+
+  loadDetails(stock:any){
+    this.updateEnabled=true;
+    this.selectedStock=stock;
+  }
 }

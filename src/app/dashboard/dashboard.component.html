@@ -7,3 +7,41 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
   </p>
 </div>
+
+<div *ngIf="updateEnabled" class="m-x-auto p-a-2 m-t-2">
+  Stock Code:<input #updateStockCode [value]="selectedStock.stockCode"/>
+  Stock Name:<input #updateStockName [value]="selectedStock.name"/>
+  <button type="button" class="btn btn-warning" (click)="updateStock(updateStockCode.value,updateStockName.value)">UPDATE</button>
+</div>
+
+<div class="m-x-auto p-a-2">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>OPERATIONS</th>
+        <th>NAME</th>
+        <th>STOCK CODE</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let stock of stocks">
+      <td>{{stock.id}}</td>
+      <td>
+        <button type="button" class="btn btn-warning" (click)="loadDetails(stock)">UPDATE</button>
+        <button type="button" class="btn btn-danger" (click)="deleteStock(stock.id)">DELETE</button>
+      </td>
+      <td>{{stock.name}}</td>
+      <td>{{stock.stockCode}}</td>
+    </tr>
+  </table>
+</div>
+
+<hr>
+
+<h2>Add Stock</h2>
+Stock Code:<input #newStockCode/>
+Stock Name:<input #newName/>
+<button type="button" class="btn btn-primary" (click)="createStock(newStockCode.value, newName.value)">CREATE</button>
+
+
+
