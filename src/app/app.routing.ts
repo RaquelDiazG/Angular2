@@ -6,7 +6,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 
 const appRoutes: Routes=[
     {
-        path: 'stocks',
+        path: '',
         component:DashboardComponent
     },
     {
